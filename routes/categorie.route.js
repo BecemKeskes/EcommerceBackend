@@ -4,8 +4,7 @@ const Categorie=require("../models/categorie")
 // créer un nouvelle catégorie
 router.post('/', async (req, res) => {
     const { nomcategorie, imagecategorie} = req.body;
-    const newCategorie = new Categorie({nomcategorie:nomcategorie, 
-    imagecategorie:imagecategorie})
+    const newCategorie = new Categorie({nomcategorie:nomcategorie, imagecategorie:imagecategorie})
     try {
         await newCategorie.save();
         res.status(200).json(newCategorie );

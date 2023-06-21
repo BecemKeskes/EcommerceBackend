@@ -52,7 +52,7 @@ router.get('/scat/:scategorieID',async(req, res)=>{
     );
     const articles = await
     Article.findById(art._id).populate("scategorieID").exec();
-    res.status(200).json(articles);
+    res.status(200).json(art);
     } catch (error) {
     res.status(404).json({ message: error.message });
     }
