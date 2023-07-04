@@ -1,6 +1,7 @@
 const express=require('express');
 const mongoose =require("mongoose")
 const dotenv =require('dotenv')
+const cors=require('cors')
 const categorieRouter=require("./routes/categorie.route")
 const articleRouter =require("./routes/article.route")
 const scategorieRouter =require("./routes/scategorie.route")
@@ -8,6 +9,7 @@ dotenv.config()
 const app = express();
 //BodyParser Middleware
 app.use(express.json()); 
+app.use(cors())
 mongoose.set("strictQuery", false);
 // Connexion à la base données
 mongoose.connect(process.env.DATABASECLOUD,{
