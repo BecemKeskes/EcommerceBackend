@@ -18,8 +18,7 @@ router.get('/productspage', async (req, res) => {
     // Calculez le nombre d'éléments à sauter (offset)
     const offset = (page - 1) * pagesize;
     try {
-        // Effectuez la requête à votre source de données en utilisant les paramètres de
-        pagination
+        // Effectuez la requête à votre source de données en utilisant les paramètres de pagination
         const articles = await Article.find({}, null, { sort: { '_id': -1 } })
             .skip(offset)
             .limit(pagesize)
